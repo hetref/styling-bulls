@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --light: #57bb8e;
+  --dark: #516c60;
+  --primary: #e0efe8;
+  --desc: #c0d6cc;
+  --finalbg: #8ec93bed;
+}
+
+body {
+  background-color: #f7f5f6;
+  font-family: "Roboto";
+  color: var(--dark);
+}
+
+#body_wrapper {
+  padding-bottom: 6rem;
+}
+
+#profile_body_section button .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.tag {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 6px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.toggle {
+  --width: 40px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #dddddd;
+  transition: background 0.2s;
+}
+
+.toggle__input:checked ~ .toggle__fill {
+  background: var(--light);
+}
+
+.toggle__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.toggle__input:checked ~ .toggle__fill::after {
+  transform: translateX(var(--height));
+}
